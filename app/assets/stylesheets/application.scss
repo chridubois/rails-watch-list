@@ -10,3 +10,163 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// JS libraries
+@import "tom-select/dist/css/tom-select.min.css";
+
+.body {
+  background-color: #F4F4F4 !important;
+}
+
+.banner {
+  // background: asset-url('Sallecinema.jpg') no-repeat;
+  background: linear-gradient(
+  rgba(0, 0, 0, 0.45),
+  rgba(0, 0, 0, 0.45)
+  ),asset-url('Sallecinema.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  .content {
+    text-align: center;
+  }
+}
+
+.banner_list {
+  background-size:cover;
+  background-repeat:no-repeat;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  // object-fit: cover;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container.lists {
+  display: flex;
+  // justify-content: space-evenly;
+  padding: 20px;
+}
+
+.grid_lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.list_block {
+  flex-grow: 1;
+  margin-right: 100px;
+}
+
+.list_bloc {
+  width: 100%;
+  height: 200px;
+  background-size: 100%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+}
+.movies_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.movie_bloc {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .movie-img img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .movie_bloc_content .details {
+    display: flex;
+    align-items: center;
+  }
+  .movie_bloc_content .last_details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+
+  .movie_description p {
+    font-size: 10px;
+    color: gray;
+  }
+
+  .movie_title {
+    font-weight: bold;
+  }
+
+  .movie_rating {
+    color: gray;
+    font-size: 12px;
+  }
+  .movie_stars {
+    font-size: 12px;
+    color: rgb(167, 134, 1);
+  }
+  .delete_button {
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review_add {
+  background-color: white;
+  border: solid;
+  width: 600px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+
+  .rating_stars {
+    color: rgb(167, 134, 1);
+  }
+}
+
+.since_when {
+  font-size: 10px;
+}
+
+.number_movies {
+  background-color: rgb(248, 162, 15);
+  border-radius: 5px;
+  padding: 6px;
+  padding-inline: 14px;
+  position: relative;
+  top: -163px;
+  right: -363px
+}

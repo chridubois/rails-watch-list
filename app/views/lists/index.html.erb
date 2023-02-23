@@ -1,0 +1,19 @@
+<div class="banner">
+  <div class="content">
+    <h1 data-controller="typed-js">Save any kind of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+<div class="container lists">
+  <div class="list_block">
+    <h2>My lists</h2>
+    <div class="grid_lists">
+      <% @lists.each do |list| %>
+        <%= render 'list', list: list %>
+      <% end %>
+    </div>
+  </div>
+  <div class="buttons_block">
+    <%= link_to "Add a new list", new_list_path, class: "btn btn-success" %>
+  </div>
+</div>

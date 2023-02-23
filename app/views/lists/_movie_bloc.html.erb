@@ -1,0 +1,19 @@
+<div class="movie_bloc">
+  <div class="movie-img">
+    <img src="<%=movie.poster_url%>" alt="">
+  </div>
+  <div class="movie_bloc_content p-3">
+    <div class="details">
+    <div class="movie_title pe-1"><%=movie.title%></div>
+    <div class="movie_rating pe-1"><%=movie.rating%></div>
+    <div class="movie_stars"><i class="fa-solid fa-star"></i></div>
+    </div>
+    <div class="movie_description">
+      <p><%=movie.overview%></p>
+    </div>
+    <div class="last_details">
+      <p><i class="fa-sharp fa-solid fa-quote-left"></i>Quote</p>
+      <%= link_to 'Delete', bookmark_path(movie), class: "delete_button" %>
+    </div>
+  </div>
+</div>
