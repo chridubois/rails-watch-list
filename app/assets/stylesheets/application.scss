@@ -130,7 +130,7 @@ body {
   }
   .movie_stars {
     font-size: 12px;
-    color: rgb(167, 134, 1);
+    color: orange
   }
   .delete_button {
     text-decoration: none;
@@ -153,7 +153,7 @@ body {
   align-items: center;
 
   .rating_stars {
-    color: rgb(167, 134, 1);
+    color: orange;
   }
 }
 
@@ -181,4 +181,8 @@ body {
 
 .rating .stars li.on::before {
   color:  orange !important;
+}
+
+.form_add_movie {
+  display: flex;
 }

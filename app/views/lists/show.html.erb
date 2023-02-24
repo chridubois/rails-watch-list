@@ -6,40 +6,57 @@
     <h1><%= @list.name %></h1>
   </div>
   <div class="number_movies">
-  <%= @list.movies.count %> Movies
+    <%= @list.movies.count %> Movies
   </div>
 </div>
 <div class="container content_list p-3">
   <div class="bouton_block pb-3 d-flex justify-content-end">
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.association :movie %>
-      <%= f.input :comment %>
-      <%= f.button :submit, class: "btn btn-success" %>
-    <% end %>
-  </div>
-  <div class="movies_list">
-    <% @list.movies.each do |movie| %>
-      <%= render 'movie_bloc', movie: movie %>
-    <% end %>
-  </div>
-  <div class="reviews pt-5">
-    <div class="reviews_list">
-      <h2>Reviews</h2>
-      <% @list.reviews.each do |review| %>
-        <%= render 'review_bloc', review: review %>
+    <form class="form_add_movie" method="POST">
+      <div class="form-example">
+        <label for="name">Movie</label>
+        <select name="movie" id="movie" required>
+          <% Movie.all.each do |movie| %>
+            <option valeur="<%= movie.id %>"><%= movie.title %> </option>
+          <% end %>
+        </select>
+      </div>
+      <div class="form-example">
+        <label for="comment">Comment: </label>
+        <input type="comment" name="comment" id="comment">
+      </div>
+      <div class="form-example">
+        <input type="submit" value="Subscribe!">
+      </div>
+    </form>
+    <%# <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%# <%= f.association :movie %>
+      <%# <%= f.input :comment %>
+      <%# <%= f.button :submit, class: "btn btn-success" %>
+      <%# <% end %>
+    </div>
+    <div class="movies_list">
+      <% @list.movies.each do |movie| %>
+        <%= render 'movie_bloc', movie: movie %>
       <% end %>
     </div>
-    <hr />
-    <div class="review_add p-3">
-    <h5>Add your review</h5>
-    <%= simple_form_for [@list, @review] do |f| %>
-      <%= f.input :comment, placeholder: "Add a review here"%>
-      <%= f.input :rating, input_html: {data: {role: "rating"}} %>
-      <%= f.button :submit, class: "btn btn-success" %>
-    <% end %>
+    <div class="reviews pt-5">
+      <div class="reviews_list">
+        <h2>Reviews</h2>
+        <% @list.reviews.each do |review| %>
+          <%= render 'review_bloc', review: review %>
+        <% end %>
+      </div>
+      <hr />
+      <div class="review_add p-3">
+        <h5>Add your review</h5>
+        <%= simple_form_for [@list, @review] do |f| %>
+          <%= f.input :comment, placeholder: "Add a review here"%>
+          <%= f.input :rating, input_html: {data: {role: "rating"}} %>
+          <%= f.button :submit, class: "btn btn-success" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-<%# <%= link_to "Edit my list", edit_list_path %>
-<%# <%= link_to "Back to the lists", lists_path %>
-<script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+  <%# <%= link_to "Edit my list", edit_list_path %>
+  <%# <%= link_to "Back to the lists", lists_path %>
+  <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
