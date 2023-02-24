@@ -170,3 +170,15 @@ body {
   top: -163px;
   right: -363px
 }
+
+.rating .stars li {
+  color:  orange !important;
+}
+
+.rating .stars li::before {
+  color:  grey !important;
+}
+
+.rating .stars li.on::before {
+  color:  orange !important;
+}
