@@ -34,7 +34,7 @@
     <h5>Add your review</h5>
     <%= simple_form_for [@list, @review] do |f| %>
       <%= f.input :comment, placeholder: "Add a review here"%>
-      <%= f.input :rating %>
+      <%= f.input :rating, input_html: {data_role: "rating"} %>
       <%= f.button :submit, class: "btn btn-success" %>
     <% end %>
     </div>
