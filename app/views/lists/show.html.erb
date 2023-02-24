@@ -11,9 +11,9 @@
 </div>
 <div class="container content_list p-3">
   <div class="bouton_block pb-3 d-flex justify-content-end">
-    <%= simple_form_for [@list, @bookmark], html: { class: 'form-control' } do |f| %>
-      <%= f.association :movie, class: 'form-control' %>
-      <%= f.input :comment, class: 'form-control' %>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
       <%= f.button :submit, class: "btn btn-success" %>
     <% end %>
   </div>
